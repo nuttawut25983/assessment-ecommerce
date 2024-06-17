@@ -1,0 +1,101 @@
+databaseChangeLog:
+  - changeSet:
+      id: Load User
+      author: poy
+      changes:
+        - loadData:
+            catalogName: user
+            columns:
+              - column:
+                  header: id
+                  name: id
+                  type: numeric
+              - column:
+                  header: name
+                  name: name
+                  type: varchar
+              - column:
+                  header: password
+                  name: password
+                  type: varchar
+              - column:
+                  header: role
+                  name: role
+                  type: varchar
+            commentLineStartsWith: //
+            encoding: UTF-8
+            file: data/user.csv
+            quotchar: ''''
+            relativeToChangelogFile: true
+            schemaName: public
+            separator: ','
+            tableName: users
+            usePreparedStatements: true
+  - changeSet:
+      id: Load Brand
+      author: poy
+      changes:
+        - loadData:
+            catalogName: brand
+            columns:
+              - column:
+                  header: id
+                  name: id
+                  type: numeric
+              - column:
+                  header: name
+                  name: name
+                  type: varchar
+            commentLineStartsWith: //
+            encoding: UTF-8
+            file: data/brand.csv
+            quotchar: ''''
+            relativeToChangelogFile: true
+            schemaName: public
+            separator: ','
+            tableName: brand
+            usePreparedStatements: true
+  - changeSet:
+      id: Load Product
+      author: poy
+      changes:
+        - loadData:
+            catalogName: product
+            columns:
+              - column:
+                  header: id
+                  name: id
+                  type: numeric
+              - column:
+                  header: name
+                  name: name
+                  type: varchar
+              - column:
+                  header: description
+                  name: description
+                  type: varchar
+              - column:
+                  header: sku
+                  name: sku
+                  type: varchar
+              - column:
+                  header: image_url
+                  name: image_url
+                  type: varchar
+              - column:
+                  header: price
+                  name: price
+                  type: numeric
+              - column:
+                  header: brand_id
+                  name: brand_id
+                  type: numeric
+            commentLineStartsWith: //
+            encoding: UTF-8
+            file: data/product.csv
+            quotchar: ''''
+            relativeToChangelogFile: true
+            schemaName: public
+            separator: ','
+            tableName: product
+            usePreparedStatements: true

@@ -1,0 +1,98 @@
+databaseChangeLog:
+  - changeSet:
+      id: create users table
+      author: poy
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  incrementBy: 1
+                  generationType: always
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: username
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: password
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: role
+                  type: varchar(255)
+  - changeSet:
+      id: create table brand
+      author: poy
+      changes:
+        - createTable:
+            tableName: brand
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  incrementBy: 1
+                  generationType: always
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id: create table product
+      author: poy
+      changes:
+        - createTable:
+            tableName: product
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  incrementBy: 1
+                  generationType: always
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: sku
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: price
+                  type: decimal(10, 2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: description
+                  type: varchar(255)
+              - column:
+                  name: image_url
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: brand_id
+                  type: int
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_brand_id
+                    references: brand(id)

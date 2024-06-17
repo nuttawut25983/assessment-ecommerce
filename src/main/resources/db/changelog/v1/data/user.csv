@@ -1,0 +1,4 @@
+username,password,role
+superadmin,$2a$10$3xuNbSAR7c8VGblXSG.wf.LNWnsKNLdwpsoL89ULwAENN1SPWrliG,SUPER_ADMIN
+admin,$2a$10$3xuNbSAR7c8VGblXSG.wf.LNWnsKNLdwpsoL89ULwAENN1SPWrliG,ADMIN
+user,$2a$10$3xuNbSAR7c8VGblXSG.wf.LNWnsKNLdwpsoL89ULwAENN1SPWrliG,USER

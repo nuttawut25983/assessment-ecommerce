@@ -1,0 +1,15 @@
+name,sku,price,description,image_url,brand_id
+Adidas Samba,AD-01,100,-,https://cdn.runrepeat.com/storage/gallery/product_primary/25204/adidas-samba-21161572-720.jpg,2
+Adidas Busenitz,AD-02,200,-,https://cdn.runrepeat.com/storage/gallery/product_primary/35089/adidas-busenitz-lab-review-20893758-720.webp,2
+Adidas Campus 00S,AD-03,300,-,https://cdn.runrepeat.com/storage/gallery/product_primary/39602/adidas-campus-00-s-21158474-720.jpg,2
+Adidas Gazelle,AD-04,400,-,https://cdn.runrepeat.com/storage/gallery/product_primary/25091/adidas-gazelle-21158481-720.jpg,2
+Adidas Ozweego,AD-05,500,-,https://cdn.runrepeat.com/storage/gallery/product_primary/32545/adidas-ozweego-21158485-720.jpg,2
+Nike Roshe,NK-01,200,-,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI0aaBq-RAKRPlWJW-G-PTFIcWCZNUH7_Dnw&s,1
+Nike Air Zoom Huarache 2K4,NK-02,500,-,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI0aaBq-RAKRPlWJW-G-PTFIcWCZNUH7_Dnw&s,1
+Nike Waffle Racer,NK-03,400,-,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI0aaBq-RAKRPlWJW-G-PTFIcWCZNUH7_Dnw&s,1
+Nike Air Zoom Generation,NK-04,359,-,https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI0aaBq-RAKRPlWJW-G-PTFIcWCZNUH7_Dnw&s,1
+Puma Fast-R Nitro Elite Running Shoes,PM-01,123,-,https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcR3xvuur0h2rp-_7sAXH-bS5V7POwTokC_WKhWRDJN5QWz7q1MksNhtLcvuKlhsqHxEE5CWaJT331LOCq0XroclUqinyHsRkHVFmx50Ycv6CdDbSqWzo266hSs&usqp=CAE,3
+Puma Run XX Nitro 2 Women’s Running Shoes,PM-02,456,-,https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcR3xvuur0h2rp-_7sAXH-bS5V7POwTokC_WKhWRDJN5QWz7q1MksNhtLcvuKlhsqHxEE5CWaJT331LOCq0XroclUqinyHsRkHVFmx50Ycv6CdDbSqWzo266hSs&usqp=CAE,3
+"Puma Fast-Fwd Nitro Elite Running Shoes",PM-03,789,-,https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcR3xvuur0h2rp-_7sAXH-bS5V7POwTokC_WKhWRDJN5QWz7q1MksNhtLcvuKlhsqHxEE5CWaJT331LOCq0XroclUqinyHsRkHVFmx50Ycv6CdDbSqWzo266hSs&usqp=CAE,3
+Reebok Club C 85,RE-01,450,-,https://cdn.runrepeat.com/storage/gallery/product_primary/24866/reebok-club-c85-lay-flat-15928136-720.jpg,4
+Reebok Club C 85 Vintage,RE-02,999,-,https://cdn.runrepeat.com/storage/gallery/product_primary/25141/reebok-club-c-85-vintage-21226084-720.jpg,4
