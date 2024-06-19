@@ -1,6 +1,7 @@
 package maze.lucablock.assessmentecommerce.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,6 +15,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import java.math.BigDecimal;
+import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -47,6 +49,14 @@ public class Product {
   private String description;
 
   private String imageUrl;
+
+  @Column(name = "created_date")
+  @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+  private Date createDate = new Date();
+
+  @Column(name = "modified_date")
+  @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+  private Date modifiedDate = new Date();
 
   @ManyToOne
   @JoinColumn(name = "brand_id", referencedColumnName = "id")

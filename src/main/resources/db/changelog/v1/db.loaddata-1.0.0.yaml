@@ -90,6 +90,13 @@ databaseChangeLog:
                   header: brand_id
                   name: brand_id
                   type: numeric
+                  header: created_date
+                  name: created_date
+                  type: datetime
+              - column:
+                  header: modified_date
+                  name: modified_date
+                  type: datetime
             commentLineStartsWith: //
             encoding: UTF-8
             file: data/product.csv

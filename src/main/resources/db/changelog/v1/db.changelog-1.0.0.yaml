@@ -96,3 +96,9 @@ databaseChangeLog:
                     nullable: false
                     foreignKeyName: fk_brand_id
                     references: brand(id)
+              - column:
+                  name: created_date
+                  type: datetime
+              - column:
+                  name: modified_date
+                  type: timestamp

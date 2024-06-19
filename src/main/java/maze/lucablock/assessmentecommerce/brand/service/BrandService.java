@@ -14,4 +14,5 @@ public interface BrandService {
 
   List<Brand> getBrands();
 
+  List<BrandListDto> getBrandsAdmin();
 }

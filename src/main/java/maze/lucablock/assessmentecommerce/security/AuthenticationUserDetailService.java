@@ -2,6 +2,7 @@ package maze.lucablock.assessmentecommerce.security;
 
 
 import maze.lucablock.assessmentecommerce.entity.User;
+import maze.lucablock.assessmentecommerce.exceptions.NotFoundException;
 import maze.lucablock.assessmentecommerce.user.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -21,7 +22,7 @@ public class AuthenticationUserDetailService implements UserDetailsService {
   @Override
   public User loadUserByUsername(String username) throws UsernameNotFoundException {
     return userRepository.findByUsername(username).orElseThrow(
-        () -> new UsernameNotFoundException("User not found")
+        () -> new NotFoundException("User not found")
     );
   }
 

@@ -6,6 +6,7 @@ import maze.lucablock.assessmentecommerce.authentication.request.RegisterRequest
 import maze.lucablock.assessmentecommerce.authentication.service.AuthenticationService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,12 +27,23 @@ public class AuthenticationController {
   ) {
     return ResponseEntity.ok(authenticationService.register(registerRequest));
   }
+
+  @PostMapping("/login/admin")
+  public ResponseEntity<AuthenticationResponse> authenticateAdmin(
+      @Valid @RequestBody AuthenticationRequest authenticationRequest
+  ) {
+    return ResponseEntity.ok(authenticationService.loginAdmin(authenticationRequest));
+  }
+
   @PostMapping("/login")
-  public ResponseEntity<AuthenticationResponse> authenticate(
+  public ResponseEntity<AuthenticationResponse> authenticateUser(
       @Valid @RequestBody AuthenticationRequest authenticationRequest
   ) {
     return ResponseEntity.ok(authenticationService.login(authenticationRequest));
   }
+
+
+
 
 
 }

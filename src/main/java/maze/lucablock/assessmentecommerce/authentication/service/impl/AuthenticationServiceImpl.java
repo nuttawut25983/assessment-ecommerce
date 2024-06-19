@@ -31,6 +31,21 @@ public class AuthenticationServiceImpl implements AuthenticationService {
   }
 
 
+  @Override
+  public AuthenticationResponse loginAdmin(AuthenticationRequest authenticationRequest) {
+    try {
+      authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authenticationRequest.getUsername(), authenticationRequest.getPassword()));
+    } catch (Exception e) {
+      throw new BadRequestException("Invalid username or password");
+    }
+    User user = userRepository.findByUsername(authenticationRequest.getUsername()).orElseThrow(
+        () -> new NotFoundException("User not found")
+    );
+    if ( !(user.getRole().equals(Role.ADMIN) || user.getRole().equals(Role.SUPER_ADMIN))) {
+      throw new BadRequestException("User is not an admin");
+    }
+    return new AuthenticationResponse(jwtService.generateToken(user),ZonedDateTime.now());
+  }
 
   @Override
   public AuthenticationResponse login(AuthenticationRequest authenticationRequest) {

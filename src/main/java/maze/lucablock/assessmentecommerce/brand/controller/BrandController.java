@@ -24,20 +24,20 @@ public class BrandController {
     this.brandService = brandService;
   }
 
-  @PreAuthorize("hasAnyRole('ADMIN')")
+  @PreAuthorize("hasAnyRole('ADMIN') or ('SUPERADMIN')")
   @PostMapping
   public ResponseEntity<Object> createBrand(@RequestBody RequestBrand requestBrand) {
     return ResponseEntity.ok(brandService.createBrand(requestBrand));
   }
 
-  @PreAuthorize("hasAnyRole('ADMIN')")
+  @PreAuthorize("hasAnyRole('ADMIN') or ('SUPERADMIN')")
   @PutMapping("/{id}")
   public ResponseEntity<Object> updateBrand(@RequestBody RequestBrand requestBrand,
       @PathVariable Long id) {
     return ResponseEntity.ok(brandService.updateBrand(id,requestBrand));
   }
 
-  @PreAuthorize("hasAnyRole('ADMIN')")
+  @PreAuthorize("hasAnyRole('ADMIN') or ('SUPERADMIN')")
   @DeleteMapping("/{id}")
   public ResponseEntity<Object> deleteBrand(@PathVariable Long id) {
     brandService.deleteBrand(id);
@@ -47,5 +47,11 @@ public class BrandController {
   @GetMapping
   public ResponseEntity<Object> getBrands() {
     return ResponseEntity.ok(brandService.getBrands());
+  }
+
+  @PreAuthorize("hasAnyRole('ADMIN') or ('SUPERADMIN')")
+  @GetMapping("/admin")
+  public ResponseEntity<Object> getBrandsAdmin() {
+    return ResponseEntity.ok(brandService.getBrandsAdmin());
   }
 }

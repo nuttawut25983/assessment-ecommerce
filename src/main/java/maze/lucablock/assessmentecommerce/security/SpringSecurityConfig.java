@@ -11,6 +11,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
@@ -24,6 +25,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 @EnableWebSecurity
 @Configuration
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SpringSecurityConfig {
 
   private final AuthenticationUserDetailService authenticationUserDetailService;
@@ -56,7 +58,7 @@ public class SpringSecurityConfig {
                 .requestMatchers(HttpMethod.POST, "/api/authenticate/**").permitAll()
                 .requestMatchers("/api/users/**").permitAll()
                 .requestMatchers(HttpMethod.GET,"/api/brands/**").permitAll()
-                .requestMatchers(HttpMethod.GET,"/api/product/**").permitAll()
+                .requestMatchers("/api/product/**").permitAll()
                 .anyRequest()
                 .authenticated())
         .sessionManagement(session -> session.sessionCreationPolicy(STATELESS))
